@@ -1,0 +1,5 @@
+dist/
+web-ext-artifacts/
+node_modules/
+sampleData/
+.cache

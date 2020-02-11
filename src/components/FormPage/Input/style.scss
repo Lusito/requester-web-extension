@@ -1,0 +1,14 @@
+.input-wrapper {
+    display: flex;
+    flex-direction: row;
+    input {
+        flex-grow: 1;
+
+        &.error {
+            border-color: red;
+        }
+    }
+    select {
+        flex-shrink: 0;
+    }
+}

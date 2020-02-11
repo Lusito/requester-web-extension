@@ -1,0 +1,14 @@
+.form-header {
+    display: flex;
+    flex-direction: row;
+    > button {
+        flex-shrink: 0;
+    }
+    > select, span {
+        flex-grow: 1;
+        width: 100%;
+    }
+    span {
+        padding: 5px;
+    }
+}

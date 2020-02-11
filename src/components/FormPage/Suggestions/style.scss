@@ -1,0 +1,11 @@
+.suggestions {
+    margin-left: 2px;
+    padding: 0;
+    max-width: 28px;
+    color: transparent;
+    overflow: hidden;
+    position: relative;
+    > option {
+        color: initial;
+    }
+}
