@@ -9,13 +9,14 @@ interface InputProps {
     data: StringMap;
 }
 
-export default ({ param }: InputProps) => {
+export default ({ param, data }: InputProps) => {
     const id = `input-${param.name}`;
-    const updateRequired = () => {
+    const onInput = () => {
+        data[param.name] = input.value;
         if (param.type === 'required')
             input.className = input.value ? '' : 'error';
     }
-    const input = <input value={param.value} id={id} onInput={updateRequired} /> as HTMLInputElement;
+    const input = <input value={param.value} id={id} onInput={onInput} /> as HTMLInputElement;
     const append = typeof param.suggestionSeparator === 'string';
     const onSelect = (value: string) => {
         if (append) {
@@ -25,8 +26,9 @@ export default ({ param }: InputProps) => {
         } else {
             input.value = value;
         }
+        onInput();
     };
-    updateRequired();
+    onInput();
     return (
         <tr>
             <td><label for={id}>{param.label || param.name}</label></td>

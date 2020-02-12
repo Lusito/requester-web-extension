@@ -11,10 +11,7 @@ interface FormProps {
 
 export default ({ config, run }: FormProps) => {
     const data: StringMap = {};
-    for(const param of config.params) {
-        if (param.value)
-            data[param.name] = param.value;
-    }
+
     const urlOption = typeof config.url === 'string' ? null : (
         <Input param={config.url} data={data} />
     );
